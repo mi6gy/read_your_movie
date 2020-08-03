@@ -1,2 +1,2 @@
-google api key : AIzaSyAX9lfW4mJXJMIzsdnorFmrzp63fzuBwWY
+google api key : AIzaSyAX9lfW4mJXJMIzsdnorFmrzp63fzuBwWY; AIzaSyBfde9KgHwbNNBEW_J011ZGwrHD0G0O1go
 omdb api key : 101156dc
