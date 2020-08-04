@@ -4,11 +4,11 @@ $(document).ready(function () {
 
     event.preventDefault()
 
-    // var movie = $("#contentInput").val();
+    var movie = $("#contentInput").val();
     var book = $("#contentInput").val();
 
 
-    // var queryMoviesURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=101156dc";
+    var queryMoviesURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=101156dc";
     var queryBooksURL = "http://openlibrary.org/search.json?title=" + book;
 
 
@@ -25,14 +25,14 @@ $(document).ready(function () {
       console.log(bookTitle)
     });
 
-    // $.ajax({
-    //   url: queryMoviesURL,
-    //   method: "GET"
-    // }).then(function (response) {
-    //   console.log(response);
-    //   $("#contentView").text(response.Title);
+    $.ajax({
+      url: queryMoviesURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
+      $("#contentView").text(response.Title);
 
-    // });
+    });
 
   });
 
