@@ -4,11 +4,13 @@ $(document).ready(function () {
 
     event.preventDefault()
 
-    var movie = $("#contentInput").val();
+    // var movie = $("#contentInput").val();
     var book = $("#contentInput").val();
 
-    var queryMoviesURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
-    var queryBooksURL = "https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=AIzaSyBfde9KgHwbNNBEW_J011ZGwrHD0G0O1go"
+
+    // var queryMoviesURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=101156dc";
+    var queryBooksURL = "http://openlibrary.org/search.json?title=" + book;
+
 
 
 
@@ -17,18 +19,20 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      $("#contentView").text(JSON.stringify(response));
+      $("#contentView").html(response[0]);
 
+      var bookTitle = response.docs[0].title
+      console.log(bookTitle)
     });
 
-    $.ajax({
-      url: queryMoviesURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response);
-      $("#contentView").html(response.Title);
+    // $.ajax({
+    //   url: queryMoviesURL,
+    //   method: "GET"
+    // }).then(function (response) {
+    //   console.log(response);
+    //   $("#contentView").text(response.Title);
 
-    });
+    // });
 
   });
 
