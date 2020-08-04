@@ -4,32 +4,19 @@ $(document).ready(function () {
 
     event.preventDefault()
 
-    var movie = $("#contentInput").val();
-    var book = $("#contentInput").val();
+    function displayMovieInfo() {
 
-    var queryMoviesURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
-    var queryBooksURL = "https://www.googleapis.com/books/v1/volumes?q=" + book + "&apikey=AIzaSyBfde9KgHwbNNBEW_J011ZGwrHD0G0O1go";
+      var movie = $(this).attr("data-name");
+      var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
 
+      $.ajax({
+        url: queryMoviesURL,
+        method: "GET"
+      }).then(function (response) {
 
-
-    $.ajax({
-      url: queryBooksURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response);
-      $("#contentView").text(JSON.stringify(response));
-
-    });
-
-    $.ajax({
-      url: queryMoviesURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response);
-      $("#contentView").text(JSON.stringify(response));
-
-    });
-
+        $("#contentView").text(JSON.stringify(response));
+        console.log(response);
+      });
+    };
   });
-
 });
