@@ -9,20 +9,18 @@
   <!-- links -->
   <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-
 
   <title>Read Your Movie</title>
 </head>
 
 <body>
 
-  <!-- Main Bootstrap Search -->
   <div class="container">
 
     <!-- Jumbotron for Title -->
@@ -34,7 +32,7 @@
       </h1>
     </div>
 
-
+    <!-- Search field -->
     <form id="contentForm">
       <label for="contentInput">Search for a movie</label>
       <input type="text" id="contentInput"><br>
@@ -47,21 +45,21 @@
     <div id="contentView"></div>
     <div id="bookView"></div>
 
-
-
-    <!-- Row for Searching -->
-
     <body>
+
       <br>
       <br>
+
+      <!-- Row for Searching -->
       <div class="row">
 
-
+        <!-- Movie card -->
         <div class="col s6 m6 l6 ">
           <div class="card">
             <div class="card-image card-movies">
               <img src="">
               <span class="card-title"></span>
+              <h1 id="movie-title"></h1>
             </div>
             <div class="card-content">
               <div class="movieRating"></div>
@@ -77,6 +75,7 @@
           </div>
         </div>
 
+        <!-- Book card -->
         <div class="col s6 m6 l6 ">
           <div class="card">
             <div class="card-image">
@@ -85,7 +84,6 @@
             </div>
             <div class="card-content">
               <div class="googleRating"></div>
-
 
               <div class="googlePlot">I am a very simple card. I am good at containing small bits of information.
                 I am convenient because I require little markup to use effectively.</div>
@@ -105,9 +103,46 @@
 
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script> -->
-  <script src="./assets/js/script.js"></script>
+  <script type="text/javascript">
 
+    $("#findContent").on("click", function (event) {
+      event.preventDefault()
+      var book = $("#contentInput").val();
+      var queryBooksURL = "https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=AIzaSyBfde9KgHwbNNBEW_J011ZGwrHD0G0O1go"
+
+      $.ajax({
+        url: queryBooksURL,
+        method: "GET"
+      }).then(function (googleResponse) {
+        console.log(googleResponse);
+        // $("#bookView").html(googleResponse.items[0].volumeInfo.authors);
+        var queryMoviesURL = "https://www.omdbapi.com/?s=" + book + "&apikey=101156dc";
+
+        $.ajax({
+          url: queryMoviesURL,
+          method: "GET"
+        }).then(function (movieResponse) {
+          console.log(movieResponse);
+          // $("#contentView").text(movieResponse.Title);
+
+          if (googleResponse.items.length > 0 && movieResponse.Response != "False") {
+            // var bookImgURL = response.items[0].imageLinks.thumbnail;
+            // $("#bookName").text(googleResponse.items[0].volumeInfo.title);
+            // $("#card-title").html(googleResponse.items[0].volumeInfo.authors);
+            $("#movie-title").text(movieResponse.Search[0].Title);
+            // $("img").attr("src", bookImgURL);
+          }
+          else {
+            $("#bookView").html("<p>Movie not found</p>");
+          }
+        });
+      }).catch(function (err) {
+        console.log(err);
+      })
+    });
+
+
+  </script>
 
 </body>
 
