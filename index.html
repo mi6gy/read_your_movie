@@ -116,7 +116,7 @@
       }).then(function (googleResponse) {
         console.log(googleResponse);
         // $("#bookView").html(googleResponse.items[0].volumeInfo.authors);
-        var queryMoviesURL = "https://www.omdbapi.com/?s=" + book + "&apikey=101156dc";
+        var queryMoviesURL = "https://www.omdbapi.com/?t=" + book + "&apikey=trilogy";
 
         $.ajax({
           url: queryMoviesURL,
