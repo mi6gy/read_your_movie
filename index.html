@@ -21,7 +21,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="container center-align">
 
     <!-- Jumbotron for Title -->
     <div class="jumbotron" style="background-color: #20315A ; color: white;">
@@ -51,18 +51,18 @@
       <br>
 
       <!-- Row for Searching -->
-      <div class="row">
+      <div class="row center-align">
 
         <!-- Movie card -->
-        <div class="col s6 m6 l6 ">
+        <div class="col s12 m6 l6">
           <div class="card center-align">
             <div class="card-image card-movies">
-              
+
               <span class="card-title"></span>
               <h4 id="movie-title"></h4>
             </div>
             <div class="card-content">
-              <img id="movie-image" src="">
+              <img class="responsive-img" id="movie-image" src="">
               <div class="movieRating">
                 <p id="movie-rating"></p>
               </div>
@@ -80,16 +80,16 @@
         </div>
 
         <!-- Book card -->
-        <div class="col s6 m6 l6 ">
+        <div class="col s12 m6 l6 ">
           <div class="card center-align">
             <div class="card-image">
-              
+
               <span class="card-title"></span>
-                <h1 id="book-title"></h1>
-              
+              <h4 id="book-title"></h4>
+
             </div>
             <div class="card-content">
-              <img class="resposive-img" id="book-image" src="">
+              <img class="responsive-img" id="book-image" src="">
               <div class="googleRating">
                 <p id="book-rating"></p>
               </div>
@@ -148,7 +148,7 @@
             $("#book-link").attr("href", "https://play.google.com/store/search?q=" + googleResponse.items[0].volumeInfo.title + "&c=books")
 
 
-          
+
           }
           else {
             $("#bookView").html("<p>Movie not found</p>");
