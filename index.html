@@ -57,20 +57,24 @@
         <div class="col s6 m6 l6 ">
           <div class="card">
             <div class="card-image card-movies">
-              <img src="">
+              
               <span class="card-title"></span>
               <h1 id="movie-title"></h1>
             </div>
             <div class="card-content">
-              <div class="movieRating"></div>
+              <img id="movie-image" src="">
+              <div class="movieRating">
+                <p id="movie-rating"></p>
+              </div>
               <!-- $("img").attr("src", imgURL); -->
               <!-- movieDiv.append(image); -->
 
-              <div class="moviePlot">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</div>
+              <div class="moviePlot">
+                <p id="movie-plot"></p>
+              </div>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a id="movie-link" href="">Watch this Movie!</a>
             </div>
           </div>
         </div>
@@ -79,18 +83,23 @@
         <div class="col s6 m6 l6 ">
           <div class="card">
             <div class="card-image">
-              <img src="">
-              <span class="card-title" id="bookName"></span>
+              
+              <span class="card-title"></span>
+                <h1 id="book-title"></h1>
+              
             </div>
             <div class="card-content">
-              <div class="googleRating"></div>
+              <img id="book-image" src="">
+              <div class="googleRating">
+                <p id="book-rating"></p>
+              </div>
 
-              <div class="googlePlot">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</div>
+              <div class="googlePlot">
+                <p id="book-plot"></p>
+              </div>
             </div>
             <div class="card-action">
-              <a href="http://books.google.com/books?id=hoGkPfds4tAC&printsec=frontcover&dq=" + googleBook
-                + "&hl=&cd=1&source=gbs_api">Buy</a>
+              <a id="book-link" href="">Read this Book!</a>
             </div>
           </div>
         </div>
@@ -116,7 +125,11 @@
       }).then(function (googleResponse) {
         console.log(googleResponse);
         // $("#bookView").html(googleResponse.items[0].volumeInfo.authors);
+<<<<<<< HEAD
         var queryMoviesURL = "https://www.omdbapi.com/?t=" + book + "&apikey=trilogy";
+=======
+        var queryMoviesURL = "https://www.omdbapi.com/?t=" + book + "&apikey=101156dc";
+>>>>>>> 8e25cf430f5b62b07ca3de35f1e5b577c913e2db
 
         $.ajax({
           url: queryMoviesURL,
@@ -129,8 +142,17 @@
             // var bookImgURL = response.items[0].imageLinks.thumbnail;
             // $("#bookName").text(googleResponse.items[0].volumeInfo.title);
             // $("#card-title").html(googleResponse.items[0].volumeInfo.authors);
-            $("#movie-title").text(movieResponse.Search[0].Title);
-            // $("img").attr("src", bookImgURL);
+            $("#movie-title").text(movieResponse.Title);
+            $("#movie-plot").text(movieResponse.Plot);
+            $("#movie-image").attr("src", movieResponse.Poster);
+            $("#movie-link").attr("href", "https://play.google.com/store/search?q=" + movieResponse.Title + "&c=movies")
+            $("#book-title").text(googleResponse.items[0].volumeInfo.title);
+            $("#book-image").attr("src", googleResponse.items[0].volumeInfo.imageLinks.thumbnail);
+            $("#book-plot").text(googleResponse.items[0].volumeInfo.description);
+            $("#book-link").attr("href", "https://play.google.com/store/search?q=" + googleResponse.items[0].volumeInfo.title + "&c=books")
+
+
+          
           }
           else {
             $("#bookView").html("<p>Movie not found</p>");
