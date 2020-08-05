@@ -30,6 +30,7 @@
       <h1 class="text-center">
         <strong>
           <i class="fa fa-newspaper-o"></i> Read Your Movie</strong>
+
       </h1>
     </div>
 
@@ -50,11 +51,62 @@
 
     <!-- Row for Searching -->
 
+    <body>
+      <br>
+      <br>
+      <div class="row">
 
-    <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script> -->
-    <script src="./assets/js/script.js"></script>
+
+        <div class="col s6 m6 l6 ">
+          <div class="card">
+            <div class="card-image card-movies">
+              <img src="">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <div class="movieRating"></div>
+              <!-- $("img").attr("src", imgURL); -->
+              <!-- movieDiv.append(image); -->
+
+              <div class="moviePlot">I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</div>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s6 m6 l6 ">
+          <div class="card">
+            <div class="card-image">
+              <img src="">
+              <span class="card-title" id="bookName"></span>
+            </div>
+            <div class="card-content">
+              <div class="googleRating"></div>
+
+
+              <div class="googlePlot">I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</div>
+            </div>
+            <div class="card-action">
+              <a href="http://books.google.com/books?id=hoGkPfds4tAC&printsec=frontcover&dq=" + googleBook
+                + "&hl=&cd=1&source=gbs_api">Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+  </div>
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script> -->
+  <script src="./assets/js/script.js"></script>
 
 
 </body>
