@@ -9,6 +9,7 @@
   <!-- links -->
   <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
   <!-- <link href="#google fonts" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
@@ -44,25 +45,28 @@
     </nav>
 >>>>>>> 906b84a47edb0dcf0006474b79ff11395f3cc7d9
 
+    <div class="container">
+      <form id="contentForm" action='search' method='get'>
+        <div class="input-group">
+          <div class="input-field">
+            <input id="contentInput" type="search" name='q'>
+            <label class="label-icon" for="contentInput">
+              <i class="material-icons">search for a movie</i>
+            </label>
+          </div>
+          <button id="findContent" type="submit" value="Movie Search" class="input-group-addon btn">search</button>
+        </div>
+
+      </form>
+    </div>
+
     <!-- Search field -->
-    <form id="contentForm">
+    <!-- <form id="contentForm">
       <label for="contentInput">Search for a movie</label>
       <input type="text" id="contentInput"><br>
 
       <input id="findContent" type="submit" value="Movie Search">
-    </form>
-
-    <!-- test materialize -->
-    <!-- <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
-            <label for="textarea1">Textarea</label>
-          </div>
-        </div>
-      </form>
-    </div> -->
+    </form> -->
 
 
 
