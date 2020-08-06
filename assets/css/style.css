@@ -1,3 +1,7 @@
+* {
+  font-family: 'EB Garamond', serif;
+}
+
 .card img {
   max-height: 200px;
   object-fit: cover;
@@ -19,21 +23,42 @@
   justify-content: center;
 }
 
-#bookImg {
-  background-image: url("../images/books-library-bokeh-depth-of-field-wallpaper-preview.jpg");
-  padding-top: 10px;
-  padding-right: 10px;
+
+/* #movieImg {
+  background-image: url("../images/1168422.png");
   width: 100%;
+  background-repeat: no-repeat;
   height: 100%;
   object-fit: cover;
-  
-  
+} */
+
+#imageHeight {
+  background-image: url("../images/1168422.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+#bookImg {
+  background-image: url("../images/backgroundimage.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  object-fit: cover;
 }
 
 #contentPosition {
   padding-top: 5%;
-  
+}
 
+body {
+  background-image: url("../images/backgroundimage.jpg")
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .input-group {
