@@ -8,7 +8,7 @@
 
   <!-- links -->
   <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
-  <!-- <link href="#google fonts" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -21,12 +21,8 @@
 
 <body>
 
-<<<<<<< HEAD
-  <div class="container center-align ">
-=======
 
   <div class="container center-align" id="contentPosition">
->>>>>>> e6ad9ddf04fa8887a5c2b4367d740ada47ffb54b
 
     <!-- Titled Navbar -->
     <nav class="nav-extended z-depth-5">
@@ -39,11 +35,7 @@
       </div>
     </nav>
 
-<<<<<<< HEAD
-    <div class="container section ">
-=======
     <div class="container section">
->>>>>>> e6ad9ddf04fa8887a5c2b4367d740ada47ffb54b
       <form id="contentForm" action='search' method='get'>
         <div class="input-group ">
           <div class="input-field ">
@@ -52,41 +44,24 @@
             </label>
             <button id="findContent" type="submit" value="Movie Search"
               class="input-group-addon btn z-depth-5">search</button>
-<<<<<<< HEAD
-          </div>
-
-=======
 
           </div>
->>>>>>> e6ad9ddf04fa8887a5c2b4367d740ada47ffb54b
         </div>
 
       </form>
     </div>
 
-    <!-- Search field -->
-    <!-- <form id="contentForm">
-      <label for="contentInput">Search for a movie</label>
-      <input type="text" id="contentInput"><br>
-      <input id="findContent" type="submit" value="Movie Search">
-    </form> -->
+    <br>
+    <br>
 
+    <!-- Row for Searching -->
+    <div class="row center-align">
 
-
-
-
-    <body>
-
-      <br>
-      <br>
-
-      <!-- Row for Searching -->
-      <div class="row center-align">
-
-        <!-- Movie card -->
-        <div class="col s12 m6 l6">
-          <div class="card center-align z-depth-5">
-            <div class="card-image card-movies">
+      <!-- Movie card -->
+      <div class="col s12 m6 l6">
+        <div id="imageHeight" class="card center-align z-depth-5">
+          <div id="movieImg">
+            <div class="card-image">
               <span class="card-title"></span>
               <h4 id="movie-title"></h4>
             </div>
@@ -108,17 +83,12 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Book card -->
-<<<<<<< HEAD
-        <div class="col s12 m6 l6 ">
-          <div class="card center-align z-depth-5">
-=======
-        <div class="col s12 m6 l6">
-
-          <div class="card center-align z-depth-5">
-            <div id="bookImg">
->>>>>>> e6ad9ddf04fa8887a5c2b4367d740ada47ffb54b
+      <!-- Book card -->
+      <div class="col s12 m6 l6">
+        <div class="card center-align z-depth-5">
+          <div id="bookImg">
             <div class="card-image">
               <span class="card-title"></span>
               <h4 id="book-title"></h4>
@@ -141,7 +111,7 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
   </div>
 
   <!-- footer -->
