@@ -22,3 +22,12 @@
 body {
   background-color: beige;
 }
+
+.input-group {
+  display:table;
+  width:100%;
+}
+.input-group .input-field,
+.input-group .input-group-addon {
+  display:table-cell;
+}
