@@ -19,8 +19,21 @@
   justify-content: center;
 }
 
-body {
-  background-color: beige;
+#bookImg {
+  background-image: url("../images/books-library-bokeh-depth-of-field-wallpaper-preview.jpg");
+  padding-top: 10px;
+  padding-right: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  
+}
+
+#contentPosition {
+  padding-top: 5%;
+  
+
 }
 
 .input-group {
