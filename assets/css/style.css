@@ -7,3 +7,18 @@
   max-height: none;
   object-fit: none;
 }
+.brand-logo {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle
+}
+
+#coffeelogo {
+  width: 100px;
+  height: auto;
+  justify-content: center;
+}
+
+body {
+  background-color: beige;
+}
