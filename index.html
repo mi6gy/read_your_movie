@@ -21,10 +21,10 @@
 
 <body>
 
-  <div class="container center-align">
+  <div class="container center-align ">
 
     <!-- Titled Navbar -->
-    <nav class="nav-extended">
+    <nav class="nav-extended z-depth-5">
       <div class="nav-wrapper">
         <a href="https://mi6gy.github.io/project_1/" class="center">
           <h3>Read Your Movie</h3>
@@ -34,16 +34,18 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container section ">
       <form id="contentForm" action='search' method='get'>
-        <div class="input-group">
-          <div class="input-field">
+        <div class="input-group ">
+          <div class="input-field ">
             <input id="contentInput" type="search" name='q'>
             <label class="label-icon" for="contentInput">
               <i class="material-icons">search for a movie</i>
             </label>
+            <button id="findContent" type="submit" value="Movie Search"
+              class="input-group-addon btn z-depth-5">search</button>
           </div>
-          <button id="findContent" type="submit" value="Movie Search" class="input-group-addon btn">search</button>
+
         </div>
 
       </form>
@@ -70,7 +72,7 @@
 
         <!-- Movie card -->
         <div class="col s12 m6 l6">
-          <div class="card center-align">
+          <div class="card center-align z-depth-5">
             <div class="card-image card-movies">
               <span class="card-title"></span>
               <h4 id="movie-title"></h4>
@@ -91,8 +93,8 @@
         </div>
 
         <!-- Book card -->
-        <div class="col s12 m6 l6">
-          <div class="card center-align">
+        <div class="col s12 m6 l6 ">
+          <div class="card center-align z-depth-5">
             <div class="card-image">
               <span class="card-title"></span>
               <h4 id="book-title"></h4>
@@ -115,7 +117,7 @@
   </div>
 
   <!-- footer -->
-  <footer class="page-footer container">
+  <footer class="page-footer container z-depth-5">
     <div class="container">
       <div class="row">
         <div class="col s12 m12 l12 center">
