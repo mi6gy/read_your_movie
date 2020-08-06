@@ -8,8 +8,7 @@
 
   <!-- links -->
   <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
+  <!-- <link href="#google fonts" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
@@ -23,27 +22,40 @@
 
   <div class="container center-align">
 
-    <!-- Jumbotron for Title -->
-    <div class="jumbotron" style="background-color: #20315A ; color: white;">
-      <h1 class="text-center">
-        <strong>
-          <i class="fa fa-newspaper-o"></i> Read Your Movie</strong>
-
-      </h1>
-    </div>
+    <!-- Titled Navbar -->
+    <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <a href="https://mi6gy.github.io/project_1/" class="center">
+          <h3>Read Your Movie</h3>
+        </a>
+      </div>
+      <div class="nav-content">
+      </div>
+    </nav>
 
     <!-- Search field -->
     <form id="contentForm">
       <label for="contentInput">Search for a movie</label>
       <input type="text" id="contentInput"><br>
 
-      <!-- This button will trigger our AJAX call -->
       <input id="findContent" type="submit" value="Movie Search">
     </form>
 
-    <!-- We'll be dumping our JSON contents in here -->
-    <div id="contentView"></div>
-    <div id="bookView"></div>
+    <!-- test materialize -->
+    <!-- <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Textarea</label>
+          </div>
+        </div>
+      </form>
+    </div> -->
+
+
+
+
 
     <body>
 
@@ -57,7 +69,6 @@
         <div class="col s12 m6 l6">
           <div class="card center-align">
             <div class="card-image card-movies">
-
               <span class="card-title"></span>
               <h4 id="movie-title"></h4>
             </div>
@@ -66,9 +77,6 @@
               <div class="movieRating">
                 <p id="movie-rating"></p>
               </div>
-              <!-- $("img").attr("src", imgURL); -->
-              <!-- movieDiv.append(image); -->
-
               <div class="moviePlot">
                 <p id="movie-plot"></p>
               </div>
@@ -80,24 +88,17 @@
         </div>
 
         <!-- Book card -->
-        <div class="col s12 m6 l6 ">
-<<<<<<< HEAD
-          <div class="card">
-=======
+        <div class="col s12 m6 l6">
           <div class="card center-align">
->>>>>>> 004edd0e3a106778816743690a09e68ab01d8e87
             <div class="card-image">
-
               <span class="card-title"></span>
               <h4 id="book-title"></h4>
-
             </div>
             <div class="card-content">
               <img class="responsive-img" id="book-image" src="">
               <div class="googleRating">
                 <p id="book-rating"></p>
               </div>
-
               <div class="googlePlot">
                 <p id="book-plot"></p>
               </div>
@@ -108,52 +109,60 @@
           </div>
         </div>
       </div>
-
-
-
-
   </div>
+
+  <!-- footer -->
+  <footer class="page-footer container">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l12 center">
+          <img id="coffeelogo" src="assets/images/readyourmovie2.png">
+          <p class="grey-text text-lighten-4">Created by Anthony, Hojin, Lane, Miguel</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript">
 
+    // search click function
     $("#findContent").on("click", function (event) {
       event.preventDefault()
       var book = $("#contentInput").val();
       var queryBooksURL = "https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=AIzaSyBfde9KgHwbNNBEW_J011ZGwrHD0G0O1go"
 
+      // get books
       $.ajax({
         url: queryBooksURL,
         method: "GET"
       }).then(function (googleResponse) {
         console.log(googleResponse);
-        // $("#bookView").html(googleResponse.items[0].volumeInfo.authors);
         var queryMoviesURL = "https://www.omdbapi.com/?t=" + book + "&apikey=101156dc";
 
+        // get movies
         $.ajax({
           url: queryMoviesURL,
           method: "GET"
         }).then(function (movieResponse) {
           console.log(movieResponse);
-          // $("#contentView").text(movieResponse.Title);
 
+          // append content
           if (googleResponse.items.length > 0 && movieResponse.Response != "False") {
-            // var bookImgURL = response.items[0].imageLinks.thumbnail;
-            // $("#bookName").text(googleResponse.items[0].volumeInfo.title);
-            // $("#card-title").html(googleResponse.items[0].volumeInfo.authors);
             $("#movie-title").text(movieResponse.Title);
             $("#movie-plot").text(movieResponse.Plot);
             $("#movie-image").attr("src", movieResponse.Poster);
+            $("#movie-rating").text("Rating: " + movieResponse.Ratings[0].Value);
             $("#movie-link").attr("href", "https://play.google.com/store/search?q=" + movieResponse.Title + "&c=movies")
             $("#book-title").text(googleResponse.items[0].volumeInfo.title);
             $("#book-image").attr("src", googleResponse.items[0].volumeInfo.imageLinks.thumbnail);
+            $("#book-rating").text("Rating: " + googleResponse.items[0].volumeInfo.averageRating + "/5")
             $("#book-plot").text(googleResponse.items[0].volumeInfo.description);
             $("#book-link").attr("href", "https://play.google.com/store/search?q=" + googleResponse.items[0].volumeInfo.title + "&c=books")
 
-
-
           }
+          // if no results
           else {
             $("#bookView").html("<p>Movie not found</p>");
           }
@@ -162,7 +171,6 @@
         console.log(err);
       })
     });
-
 
   </script>
 
