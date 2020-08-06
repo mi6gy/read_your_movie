@@ -14,7 +14,7 @@
 .brand-logo {
   display: inline-block;
   height: 100%;
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 #coffeelogo {
@@ -22,7 +22,6 @@
   height: auto;
   justify-content: center;
 }
-
 
 /* #movieImg {
   background-image: url("../images/1168422.png");
@@ -40,8 +39,6 @@
   object-fit: cover;
 }
 
-
-
 #bookImg {
   background-image: url("../images/backgroundimage.jpg");
   width: 100%;
@@ -52,13 +49,6 @@
 
 #contentPosition {
   padding-top: 5%;
-}
-
-body {
-  background-image: url("../images/backgroundimage.jpg")
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
 }
 
 .input-group {
