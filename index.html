@@ -6,125 +6,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <!-- links -->
-  <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
-  <!-- <link href="#google fonts" rel="stylesheet"> -->
+  <!-- favicon link -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- google fonts links -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <!-- materialize CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- css link -->
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- animate link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
   <title>Read Your Movie</title>
 </head>
 
 <body>
+  <!-- background video -->
+  <video class="responsive-image" poster="assets/images/movieReelStill.PNG" id="bgvid" playsinline autoplay muted loop>
+    <source src="assets/images/moviereel.mp4" type="video/mp4">
+  </video>
 
-  <div class="container center-align">
-
-    <!-- Titled Navbar -->
-    <nav class="nav-extended">
-      <div class="nav-wrapper">
-        <a href="https://mi6gy.github.io/project_1/" class="center">
-          <h3>Read Your Movie</h3>
-        </a>
-      </div>
-      <div class="nav-content">
-      </div>
-    </nav>
-
-    <div class="container">
-      <form id="contentForm" action='search' method='get'>
-        <div class="input-group">
-          <div class="input-field">
-            <input id="contentInput" type="search" name='q'>
-            <label class="label-icon" for="contentInput">
-              <i class="material-icons">search for a movie</i>
-            </label>
-          </div>
-          <button id="findContent" type="submit" value="Movie Search" class="input-group-addon btn">search</button>
+  <!-- Titled Navbar -->
+  <div class="container">
+    <div class="container center-align" id="contentPosition">
+      <nav class="nav-extended z-depth-5 white transparent">
+        <div class="nav-wrapper">
+          <a href="https://mi6gy.github.io/project_1/" class="center">
+            <h3 class="black-text">Read Your Movie</h3>
+          </a>
         </div>
+      </nav>
 
-      </form>
-    </div>
-
-    <!-- Search field -->
-    <!-- <form id="contentForm">
-      <label for="contentInput">Search for a movie</label>
-      <input type="text" id="contentInput"><br>
-      <input id="findContent" type="submit" value="Movie Search">
-    </form> -->
-
-
-
-
-
-    <body>
+      <!-- search function -->
+      <div class="container section">
+        <form id="contentForm" action='search' method='get'>
+          <div class="input-group">
+            <div class="input-field">
+              <input id="contentInput" type="search">
+              <label class="black-text active" for="contentInput">
+              </label>
+              <button id="findContent" type="submit" value="Movie Search"
+                class="input-group-addon btn z-depth-5 black animated zoomIn">search</button>
+            </div>
+          </div>
+        </form>
+      </div>
 
       <br>
       <br>
 
-      <!-- Row for Searching -->
       <div class="row center-align">
 
         <!-- Movie card -->
-        <div class="col s12 m6 l6">
-          <div class="card center-align">
-            <div class="card-image card-movies">
-              <span class="card-title"></span>
-              <h4 id="movie-title"></h4>
-            </div>
-            <div class="card-content">
-              <img class="responsive-img" id="movie-image" src="">
-              <div class="movieRating">
-                <p id="movie-rating"></p>
+        <div class="col s12 m6 l6 card-column">
+          <div id="imageHeight" class="card center-align z-depth-5">
+            <div id="movieImg">
+              <div class="card-image">
+                <span class="card-title"></span>
+                <h4 id="movie-title"></h4>
               </div>
-              <div class="moviePlot">
-                <p id="movie-plot"></p>
+              <div class="card-content">
+                <img class="responsive-img" id="movie-image" src="" alt="cover of movie">
+                <div class="movieDirector">
+                  <p id="movie-director"></p>
+                </div>
+                <div class="movieRating">
+                  <p id="movie-rating"></p>
+                </div>
+                <div class="moviePlot">
+                  <p id="movie-plot"></p>
+                </div>
               </div>
-            </div>
-            <div class="card-action">
-              <a id="movie-link" href="">Watch this Movie!</a>
+              <div class="card-action">
+                <a id="movie-link" href="" target="_blank">Watch this Movie!</a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Book card -->
-        <div class="col s12 m6 l6">
-          <div class="card center-align">
-            <div class="card-image">
-              <span class="card-title"></span>
-              <h4 id="book-title"></h4>
-            </div>
-            <div class="card-content">
-              <img class="responsive-img" id="book-image" src="">
-              <div class="googleRating">
-                <p id="book-rating"></p>
+        <div class="col s12 m6 l6 card-column">
+          <div class="card center-align z-depth-5">
+            <div id="bookImg">
+              <div class="card-image">
+                <span class="card-title"></span>
+                <h4 id="book-title"></h4>
               </div>
-              <div class="googlePlot">
-                <p id="book-plot"></p>
+              <div class="card-content">
+                <img class="responsive-img" id="book-image" src="" alt="cover of book">
+                <div class="bookAuthor">
+                  <p id="book-author"></p>
+                </div>
+                <div class="googleRating">
+                  <p id="book-rating"></p>
+                </div>
+                <div class="googlePlot">
+                  <p id="book-plot"></p>
+                </div>
               </div>
-            </div>
-            <div class="card-action">
-              <a id="book-link" href="">Read this Book!</a>
+              <div class="card-action">
+                <a id="book-link" href="" target="_blank">Read this Book!</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </div>
 
   <!-- footer -->
-  <footer class="page-footer container">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m12 l12 center">
-          <img id="coffeelogo" src="assets/images/readyourmovie2.png">
-          <p class="grey-text text-lighten-4">Created by Anthony, Hojin, Lane, Miguel</p>
+  <div class="container">
+    <footer class="page-footer container  white transparent z-depth-5">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m12 l12 center">
+            <img id="coffeelogo" src="assets/images/readyourmovie2.png" alt="read your coffee logo of coffee on books">
+            <p class="black-text">Created by Anthony, Hojin, Lane, &#38; Miguel</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -133,8 +143,11 @@
     // search click function
     $("#findContent").on("click", function (event) {
       event.preventDefault()
+      $("#imageHeight").addClass("animated slideInLeft")
+      $("#bookImg").addClass("animated slideInRight")
       var book = $("#contentInput").val();
-      var queryBooksURL = "https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=AIzaSyBfde9KgHwbNNBEW_J011ZGwrHD0G0O1go"
+      var queryBooksURL = "https://www.googleapis.com/books/v1/volumes?q=" + book +
+        "&key=AIzaSyBfde9KgHwbNNBEW_J011ZGwrHD0G0O1go"
 
       // get books
       $.ajax({
@@ -154,17 +167,24 @@
           // append content
           if (googleResponse.items.length > 0 && movieResponse.Response != "False") {
             $("#movie-title").text(movieResponse.Title);
-            $("#movie-plot").text(movieResponse.Plot);
+            $("#movie-plot").text("Plot: " + movieResponse.Plot);
             $("#movie-image").attr("src", movieResponse.Poster);
+            $("#movie-director").text("Director: " + movieResponse.Director);
             $("#movie-rating").text("Rating: " + movieResponse.Ratings[0].Value);
-            $("#movie-link").attr("href", "https://play.google.com/store/search?q=" + movieResponse.Title + "&c=movies")
+            $("#movie-link").attr("href", "https://play.google.com/store/search?q=" + movieResponse
+              .Title +
+              "&c=movies")
             $("#book-title").text(googleResponse.items[0].volumeInfo.title);
             $("#book-image").attr("src", googleResponse.items[0].volumeInfo.imageLinks.thumbnail);
+            $("#book-author").text("Author: " + googleResponse.items[0].volumeInfo.authors);
             $("#book-rating").text("Rating: " + googleResponse.items[0].volumeInfo.averageRating + "/5")
-            $("#book-plot").text(googleResponse.items[0].volumeInfo.description);
-            $("#book-link").attr("href", "https://play.google.com/store/search?q=" + googleResponse.items[0].volumeInfo.title + "&c=books")
-
+            $("#book-plot").text("Plot: " + googleResponse.items[0].volumeInfo.description);
+            $("#book-link").attr("href", "https://play.google.com/store/search?q=" + googleResponse.items[
+              0]
+              .volumeInfo.title + "&c=books")
+            $(".card-column").css("visibility", "visible")
           }
+
           // if no results
           else {
             $("#bookView").html("<p>Movie not found</p>");
@@ -174,9 +194,7 @@
         console.log(err);
       })
     });
-
   </script>
-
 </body>
 
 </html>

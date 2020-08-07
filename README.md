@@ -4,20 +4,34 @@
 
 ---
 
+![demo of website](/assets/images/demo.png)
+
 ## File Contents
 
 ```
 - README.md (this file)
 
-- api.txt
+- index.html
 
 - style.css
 
-- index.html
-
 - script.js
 
+- backgroundimage.jpg
+
+- demo.png
+
+- movieReelStill.png
+
 - readyourmovie2.png
+
+- reelimage.png
+
+- moviereel.mp4
+
+- api.txt
+
+- project1.pdf
 
 ```
 
@@ -28,9 +42,9 @@
 ```
 - HTML/HTML5 is used for structure of information for webpage
 
-- CSS and Materialize are used for styling of the website
+- CSS, Materialize, and Animate are used for styling of the website
 
-- Javascript and JQuery are used for powering the password generator
+- Javascript and JQuery are used for powering search function, movie and book cards
 
 ```
 
