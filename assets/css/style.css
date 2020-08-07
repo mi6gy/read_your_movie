@@ -34,7 +34,7 @@ video {
   justify-content: center;
 }
 #imageHeight {
-  background-image: url("../images/1168422.png");
+  background-image: url("../images/reelimage.png");
   background-position: 50% 10%;
   width: 100%;
   background-repeat: no-repeat;
@@ -65,9 +65,9 @@ video {
 .input-group .input-group-addon {
   display: table-cell;
 }
-/* .card-column {
+.card-column {
   visibility: hidden;
-} */
+}
 
 .navbar.transparent.navbar-inverse .navbar-inner .page-footer {
   border-width: 0px;
