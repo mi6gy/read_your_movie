@@ -1,12 +1,21 @@
 * {
   font-family: 'EB Garamond', serif;
 }
-
+video.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+}
 .card img {
   max-height: 200px;
   object-fit: cover;
 }
-
 .card img.materialized.active {
   max-height: none;
   object-fit: none;
@@ -16,46 +25,43 @@
   height: 100%;
   vertical-align: middle;
 }
-
 #coffeelogo {
   width: 100px;
   height: auto;
   justify-content: center;
 }
-
-/* #movieImg {
-  background-image: url("../images/1168422.png");
-  width: 100%;
-  background-repeat: no-repeat;
-  height: 100%;
-  object-fit: cover;
-} */
-
 #imageHeight {
   background-image: url("../images/1168422.png");
+  background-position: 50% 10%;
   width: 100%;
   background-repeat: no-repeat;
-  height: 100%;
+  min-height: 600px;
   object-fit: cover;
 }
-
+.card-action {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 #bookImg {
   background-image: url("../images/backgroundimage.jpg");
   width: 100%;
   background-repeat: no-repeat;
-  height: 100%;
+  min-height: 600px;
   object-fit: cover;
 }
-
 #contentPosition {
   padding-top: 5%;
 }
-
 .input-group {
-  display:table;
-  width:100%;
+  display: table;
+  width: 100%;
 }
 .input-group .input-field,
 .input-group .input-group-addon {
-  display:table-cell;
+  display: table-cell;
+}
+.card-column {
+  visibility: hidden;
 }
