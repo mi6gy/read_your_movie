@@ -19,81 +19,89 @@
 </head>
 
 <body>
-  <div class="container center-align" id="contentPosition">
-    <!-- Titled Navbar -->
-    <nav class="nav-extended z-depth-5 white">
-      <div class="nav-wrapper">
-        <a href="https://mi6gy.github.io/project_1/" class="center"></a>
-        <h3 class="black-text">Read Your Movie</h3>
-      </div>
-      <div class="nav-content">
-      </div>
-    </nav>
-    <div class="container section">
-      <form id="contentForm" action='search' method='get'>
-        <div class="input-group ">
-          <div class="input-field ">
-            <input id="contentInput" type="search" name='q'>
-            <label class="label-icon" for="contentInput">
-            </label>
-            <button id="findContent" type="submit" value="Movie Search"
-              class="input-group-addon btn z-depth-5">search</button>
-          </div>
+
+  <video poster="#" id="bgvid" playsinline autoplay muted loop>
+
+    <source src="assets/images/moviereel.mp4" type="video/mp4">
+
+  </video>
+  <div class="container">
+    <div class="container center-align" id="contentPosition">
+      <!-- Titled Navbar -->
+      <nav class="nav-extended z-depth-5 white">
+        <div class="nav-wrapper">
+          <a href="https://mi6gy.github.io/project_1/" class="center"></a>
+          <h3 class="black-text">Read Your Movie</h3>
         </div>
-      </form>
-    </div>
-    <br>
-    <br>
-    <!-- Row for Searching -->
-    <div class="row center-align">
-      <!-- Movie card -->
-      <div class="col s12 m6 l6 card-column">
-        <div id="imageHeight" class="card center-align z-depth-5">
-          <div id="movieImg">
-            <div class="card-image">
-              <span class="card-title"></span>
-              <h4 id="movie-title"></h4>
-            </div>
-            <div class="card-content">
-              <img class="responsive-img" id="movie-image" src="">
-              <div class="movieDirector">
-                <p id="movie-director"></p>
-              </div>
-              <div class="movieRating">
-                <p id="movie-rating"></p>
-              </div>
-              <div class="moviePlot">
-                <p id="movie-plot"></p>
-              </div>
-            </div>
-            <div class="card-action">
-              <a id="movie-link" href="" target="_blank">Watch this Movie!</a>
+        <div class="nav-content">
+        </div>
+      </nav>
+      <div class="container section">
+        <form id="contentForm" action='search' method='get'>
+          <div class="input-group">
+            <div class="input-field ">
+              <input id="contentInput" type="search">
+              <label class="label-icon brown lighten-4" for="contentInput">
+              </label>
+              <button id="findContent" type="submit" value="Movie Search"
+                class="input-group-addon btn z-depth-5 black animated zoomIn">search</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-      <!-- Book card -->
-      <div class="col s12 m6 l6 card-column">
-        <div class="card center-align z-depth-5">
-          <div id="bookImg">
-            <div class="card-image">
-              <span class="card-title"></span>
-              <h4 id="book-title"></h4>
+      <br>
+      <br>
+      <!-- Row for Searching -->
+      <div class="row center-align">
+        <!-- Movie card -->
+        <div class="col s12 m6 l6 card-column">
+          <div id="imageHeight" class="card center-align z-depth-5">
+            <div id="movieImg">
+              <div class="card-image">
+                <span class="card-title"></span>
+                <h4 id="movie-title"></h4>
+              </div>
+              <div class="card-content">
+                <img class="responsive-img" id="movie-image" src="">
+                <div class="movieDirector">
+                  <p id="movie-director"></p>
+                </div>
+                <div class="movieRating">
+                  <p id="movie-rating"></p>
+                </div>
+                <div class="moviePlot">
+                  <p id="movie-plot"></p>
+                </div>
+              </div>
+              <div class="card-action">
+                <a id="movie-link" href="" target="_blank">Watch this Movie!</a>
+              </div>
             </div>
-            <div class="card-content">
-              <img class="responsive-img" id="book-image" src="">
-              <div class="bookAuthor">
-                <p id="book-author"></p>
+          </div>
+        </div>
+        <!-- Book card -->
+        <div class="col s12 m6 l6 card-column">
+          <div class="card center-align z-depth-5">
+            <div id="bookImg">
+              <div class="card-image">
+                <span class="card-title"></span>
+                <h4 id="book-title"></h4>
               </div>
-              <div class="googleRating">
-                <p id="book-rating"></p>
+              <div class="card-content">
+                <img class="responsive-img" id="book-image" src="">
+                <div class="bookAuthor">
+                  <p id="book-author"></p>
+                </div>
+                <div class="googleRating">
+                  <p id="book-rating"></p>
+                </div>
+                <div class="googlePlot">
+                  <p id="book-plot"></p>
+                </div>
               </div>
-              <div class="googlePlot">
-                <p id="book-plot"></p>
+              <div class="card-action">
+                <a id="book-link" href="" target="_blank">Read this Book!</a>
               </div>
-            </div>
-            <div class="card-action">
-              <a id="book-link" href="" target="_blank">Read this Book!</a>
             </div>
           </div>
         </div>
@@ -101,16 +109,18 @@
     </div>
   </div>
   <!-- footer -->
-  <footer class="page-footer container z-depth-5 white">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m12 l12 center">
-          <img id="coffeelogo" src="assets/images/readyourmovie2.png">
-          <p class="black-text">Created by Anthony, Hojin, Lane, &#38; Miguel</p>
+  <div class="container">
+    <footer class="page-footer container z-depth-5 white">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m12 l12 center">
+            <img id="coffeelogo" src="assets/images/readyourmovie2.png">
+            <p class="black-text">Created by Anthony, Hojin, Lane, &#38; Miguel</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript">

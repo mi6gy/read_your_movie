@@ -1,17 +1,20 @@
 * {
   font-family: 'EB Garamond', serif;
 }
-video.fullscreen {
+video {
   position: fixed;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  min-width: 20%;
+  min-height: 20%;
+  width: 200%;
+  height: 100%;
   z-index: -100;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
 }
+
 .card img {
   max-height: 200px;
   object-fit: cover;
