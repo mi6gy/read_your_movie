@@ -30,7 +30,7 @@
 
 - CSS and Materialize are used for styling of the website
 
-- Javascript and JQuery are used for powering the password generator
+- Javascript and JQuery are used for powering search function, movie and book cards
 
 ```
 
